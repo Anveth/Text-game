@@ -1,4 +1,5 @@
 import random
+import getpass
 
 #Create account
 
@@ -6,7 +7,7 @@ print("Create Account")
 print()
 
 login = input("create login: ")
-password = input("create password: ")
+password = getpass.getpass("create password: ")  # hidden input
 print()
 print("Account Created")
 print("Log in")
@@ -14,10 +15,10 @@ print()
 
 while True:
     enter_login = input("enter login: ")
-    enter_password = input("enter password: ")
+    enter_password = getpass.getpass("enter password: ")  # hidden input
     if enter_login == login and password == enter_password:
         print()
-        print("You succesfully logged in")
+        print("You successfully logged in")
         print()
         break
     elif enter_login != login and password == enter_password:
