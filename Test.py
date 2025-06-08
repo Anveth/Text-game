@@ -1,6 +1,8 @@
 import random
 import getpass
-
+import sys
+import time
+import random
 #Create account
 
 print("Create Account")
@@ -34,43 +36,7 @@ while True:
         print("Invalid login and password")
         print()
 
-#Characters
-
-class Char:
-    def __init__(self, gender, race, spec, atkp):
-        self.gender = gender
-        self.race = race
-        self.spec = spec
-        self.atkp = atkp
-        
-Man = Char("Male", "Human", "Warrior", 250)
-print(Man.gender + " | " + Man.race + " | " + Man.spec + " | " + str(Man.atkp))
-print()
-print()
-
-Woman = Char("Female", "Elf", "Mage", 310)
-print(Woman.gender + " | " + Woman.race + " | " + Woman.spec + " | " + str(Woman.atkp))
-print()
-print()
-
-if Man.atkp + Woman.atkp < 500:
-    print("Your attack power is too low")
-elif Man.atkp + Woman.atkp > 800:
-    print("Your attack power is great")
-else:
-    print("You have enough attack power")
-    
-#Random number    
-
-print()
-print("Random Number: " + str(random.randint(50,250)))
-print()
-
 #Game
-
-import time
-import random
-# zport sys
 
 time.sleep(0.5)
 name = input("Write your name: ")
@@ -108,18 +74,16 @@ elif spec == "mage":
     print()
 else:
     print("invalid specialization, game over")
-#    sys.exit()
+    sys.exit()
 
 road = input("You are heading to the town, which way do you want to take, forest or mainroad? ")
 print()
-print()
 
-if road == "mainroad":
+if road == "mainroad": #TBC
     print("You are going to the town by the main road")
     print()
     
 elif road == "forest":
-    print()
     print()
     print("You are going to the town by the forest")
     print()
@@ -132,7 +96,7 @@ elif road == "forest":
             random_number = random.randint(0, 10)
             print("You rolled: " + str(random_number))
             print()
-            if random_number == 0:
+            if random_number <= 2:
                 print("You missed the hit and the bear has bitten u badly in the hand, but the second hit was deadly for the bear")
                 print()
             elif random_number <= 4:
@@ -146,7 +110,7 @@ elif road == "forest":
                 print()
         else:
             print("You have run out of time and the bear has eaten you alive")
-            #    sys.exit()
+            sys.exit()
             
     elif action == "run":
         roll = input("Write \"roll\" to generate your escaping chance: ")
@@ -155,17 +119,51 @@ elif road == "forest":
             random_number = random.randint(0, 10)
             print("You rolled: " + str(random_number))
             print()
-            if random_number == 0:
+            if random_number <= 1:
                 print("You stepped on a rock, fell down and the bear has bitten your leg")
                 print()
             else:
                 print("You managed to escape the bear")
                 print()
         else: 
-            print("death")
-            print()
+            print("You failed to escape the bear and it has eaten you alive")
+            sys.exit()
 else:
-    print ("You chose the wrong way and died")
+    print ("You chose the wrong way and died, game over")
+    sys.exit()
 
 print("You reach the town of Aedos")
 print()
+
+
+# #Characters
+
+# class Char:
+#     def __init__(self, gender, race, spec, atkp):
+#         self.gender = gender
+#         self.race = race
+#         self.spec = spec
+#         self.atkp = atkp
+        
+# Man = Char("Male", "Human", "Warrior", 250)
+# print(Man.gender + " | " + Man.race + " | " + Man.spec + " | " + str(Man.atkp))
+# print()
+# print()
+
+# Woman = Char("Female", "Elf", "Mage", 310)
+# print(Woman.gender + " | " + Woman.race + " | " + Woman.spec + " | " + str(Woman.atkp))
+# print()
+# print()
+
+# if Man.atkp + Woman.atkp < 500:
+#     print("Your attack power is too low")
+# elif Man.atkp + Woman.atkp > 800:
+#     print("Your attack power is great")
+# else:
+#     print("You have enough attack power")
+    
+# #Random number    
+
+# print()
+# print("Random Number: " + str(random.randint(50,250)))
+# print()
