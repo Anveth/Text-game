@@ -9,7 +9,7 @@ print("Create Account")
 print()
 
 login = input("create login: ")
-password = getpass.getpass("create password: ")  # hidden input
+password = getpass.getpass("create password: ")
 print()
 print("Account Created")
 print("Log in")
@@ -17,7 +17,7 @@ print()
 
 while True:
     enter_login = input("enter login: ")
-    enter_password = getpass.getpass("enter password: ")  # hidden input
+    enter_password = getpass.getpass("enter password: ")
     if enter_login == login and password == enter_password:
         print()
         print("You successfully logged in")
